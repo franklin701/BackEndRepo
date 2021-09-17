@@ -1,6 +1,6 @@
-import React from "react";
-import reactDom from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles.css';
+import App from './App';
 
-import FormularioFormik from "./components/FormularioFormik/FormularioFormik";
-
-reactDom.render(<FormularioFormik />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
