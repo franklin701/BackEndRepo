@@ -1,57 +1,24 @@
-import React, { Component } from "react";
-import logo from "./assets/logo.png";
-import "./App.css";
+import { Switch, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Layout from './components/Layout/Layout';
+import Dashboard from './components/Dashboard/Dashboard';
+import About from './components/About/About';
+import Help from './components/Help/Help';
+import AuthProvider from './context/AuthProvider';
 
-class App extends Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log(e.target.email.value);
-
-    if (!e.target.email.value) {
-      alert("Email is required");
-    } else if (!e.target.email.value) {
-      alert("Valid email is required");
-    } else if (!e.target.password.value) {
-      alert("Password is required");
-    } else if (
-      e.target.email.value === "me@example.com" &&
-      e.target.password.value === "123456"
-    ) {
-      alert("Successfully logged in");
-      e.target.email.value = "";
-      e.target.password.value = "";
-    } else {
-      alert("Wrong email or password combination");
-    }
-  };
-
-  handleClick = e => {
-    e.preventDefault();
-
-    alert("Goes to registration page");
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <img src={logo} className="logo" alt="Business view - Reports" />
-        <form className="form" onSubmit={this.handleSubmit}>
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" placeholder="XXXXX@XXXX.com" />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">Senha</label>
-            <input type="password" name="password" />
-          </div>
-          <button className="primary">ENTRAR</button>
-        </form>
-        <button className="secondary" onClick={this.handleClick}>
-          Crear una nueva cuenta
-        </button>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <AuthProvider>
+      <Switch>
+        <Layout exact path="/" component={Dashboard}/>
+        <Layout path="/about" component={About}/>
+        <Layout path="/help" component={Help}/>
+        <Route path="/register" component={Register}/>
+        <Route path="/login" component={Login}/>
+      </Switch>
+    </AuthProvider>
+  );
 }
 
 export default App;
