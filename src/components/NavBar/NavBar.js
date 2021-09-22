@@ -20,15 +20,17 @@ const NavBar = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar  className="navbar navbar-dark bg-primary" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/">Example App</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Account Application</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} exact to="/">Dashboard</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
               <Nav.Link as={Link} to="/help">Help</Nav.Link>
+              <Nav.Link as={Link} to="/history">History</Nav.Link>
+              <Nav.Link as={Link} to="/transaction">Transaction</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title={authCtx.currentUser.email}>

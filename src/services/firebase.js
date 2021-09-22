@@ -8,5 +8,7 @@ const app = initializeApp({
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 });
 
+
+
 export const auth = getAuth();
 export default app;
