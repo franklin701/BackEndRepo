@@ -20,6 +20,16 @@ const Transaction = () => {
               <Form.Label> Amount $</Form.Label>
               <Form.Control type="text" required/>
             </Form.Group>
+            <Form.Group id="texts">
+              <Form.Label> Category</Form.Label>
+              <select className="form-control" id="exampleFormControlSelect1">
+      <option>Category 1</option>
+      <option>Category 2</option>
+      <option>Category 3</option>
+      <option>Category 4</option>
+      <option>Category 5</option>
+    </select>
+            </Form.Group>
             <Form.Group id="comment">
               <Form.Label>Comment</Form.Label>
               <Form.Control type="text" required/>
@@ -27,7 +37,7 @@ const Transaction = () => {
             <Button 
              
               className="w-100 mt-3" 
-              type="submit">Save Expense</Button>
+              type="submit">Save</Button>
           </Form>
         </Card.Body>
       </Card>
